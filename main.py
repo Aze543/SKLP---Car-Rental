@@ -16,8 +16,7 @@ def car_list():
 
 @app.route('/car-details')
 def car_details():
-    return '<h1>Refridgator</h1><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSudXYuY7T-mmea-LeuKBBxDiihBaNcmbug&s" alt="..." />'
-
+    return render_template('details.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8000)

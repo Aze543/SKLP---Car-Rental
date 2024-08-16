@@ -51,16 +51,8 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
-    // Activate SimpleLightbox plugin for portfolio items
-    new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
-    });
-    var myModal = document.getElementById('myModal')
-    var myInput = document.getElementById('myInput')
-
-    myModal.addEventListener('shown.bs.modal', function () {
-        myInput.focus()
-    });
-
+    document.addEventListener('click', function (e) {
+        console.log(e.target)
+     });
+   
 });

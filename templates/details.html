@@ -1,0 +1,56 @@
+{% include 'header.html' %}
+        <!-- Header-->
+        <header class="py-5" style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSudXYuY7T-mmea-LeuKBBxDiihBaNcmbug&s'), linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%)">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <br><br> <br>
+                    <h1 class="display-4 fw-bolder">Refridgator</h1>
+                    <br> <br>
+                </div>
+            </div>
+        </header>
+        <!-- content -->
+        <article>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto justify-content-center">
+                  <p>
+                    latin
+
+the underlying root word is the latin word "frigus" which means cold
+
+the d was added into the shortened form for pronunciation assistance/as mistakes. think of it like this: if it was spelt 'frige,' the likely outcome would be the 'i' being pronounced as 'eye' - so freye-j instead of frihj. this is because of that ending 'e' being there (it's not there in refrigerator, also it's not a hanging 'e' as the 'r' is part of that syllable: re-frih-jer-ay-tehr)
+                  </p>
+                </div>
+              </div>
+            </div>
+        </article>    
+        <!-- Section-->  
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJSudXYuY7T-mmea-LeuKBBxDiihBaNcmbug&s" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Refridgator</h5>
+                                    <p>Crazy Ref</p>
+                                    <!-- Product price-->
+                                    $0.00
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{ url_for('car_details') }}">View details</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% include 'footer.html' %}
+
