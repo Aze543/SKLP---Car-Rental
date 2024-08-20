@@ -21,7 +21,7 @@
                           <img src="{{ url_for('static', filename='img/sedan.png') }}" alt="Vehicle Image" class="img-fluid rounded">
                       </div>
                       <!-- Vehicle Details -->
-                      <div class="col-md-5 mt-4">
+                      <div class="col-md-5 mt-4 v-det">
                           <h2>Sedan</h2>
                           <ul class="list-unstyled">
                               <li><strong>Capacity:</strong> 5</li>
@@ -40,7 +40,7 @@
                         <img src="{{ url_for('static', filename='img/van.png') }}" alt="Vehicle Image" class="img-fluid rounded">
                     </div>
                     <!-- Vehicle Details -->
-                    <div class="col-md-5 mt-4">
+                    <div class="col-md-5 mt-4 v-det">
                         <h2>Van</h2>
                         <ul class="list-unstyled">
                             <li><strong>Capacity:</strong> 16</li>
@@ -59,13 +59,13 @@
                         <img src="{{ url_for('static', filename='img/AUV.png') }}" alt="Vehicle Image" class="img-fluid rounded">
                     </div>
                     <!-- Vehicle Details -->
-                    <div class="col-md-5 mt-4">
+                    <div class="col-md-5 mt-4 v-det">
                         <h2>AUV</h2>
                         <ul class="list-unstyled">
                             <li><strong>Capacity:</strong> 10</li>
                             <li><strong>Fuel Type:</strong> Gasoline</li>
                             <li><strong>Transmission:</strong> Manual</li>
-                            <li><strong>Price per Day:</strong> ₱2,500.00</li>
+                            <li><strong>Price per Day:</strong> ₱2,200.00</li>
                         </ul>
                         <button type="button" class="btn btn-primary mt-3">Rent Now</button>
                     </div>
@@ -78,13 +78,13 @@
                         <img src="{{ url_for('static', filename='img/SUV.png') }}" alt="Vehicle Image" class="img-fluid rounded">
                     </div>
                     <!-- Vehicle Details -->
-                    <div class="col-md-5 mt-4">
+                    <div class="col-md-5 mt-4 v-det">
                         <h2>SUV</h2>
                         <ul class="list-unstyled">
                             <li><strong>Capacity:</strong> 7</li>
                             <li><strong>Fuel Type:</strong> Gasoline</li>
                             <li><strong>Transmission:</strong> Manual</li>
-                            <li><strong>Price per Day:</strong> ₱2,500.00</li>
+                            <li><strong>Price per Day:</strong> ₱2,300.00</li>
                         </ul>
                         <button type="button" class="btn btn-primary mt-3">Rent Now</button>
                     </div>
@@ -92,5 +92,6 @@
             </div>
             </div>
       </section>
+      <hr>
         
 {% include "footer.html" %}
