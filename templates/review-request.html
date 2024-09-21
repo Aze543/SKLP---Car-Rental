@@ -1,85 +1,75 @@
 {% include 'header.html' %}
 <header class="py-5" style="background-color: #800e13;">
     <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <br><br>
-            <h1 class="display-4 fw-bolder">Client Requests</h1>
-            <hr class="divider" />
-            <p class="lead fw-normal text-white-50 mb-0">requests from the client</p>
-            <br>
-        </div>
+      <div class="text-center text-white">
+        <br><br>
+        <h1 class="display-4 fw-bolder">Client Requests</h1>
+        <hr class="divider" />
+        <p class="lead fw-normal text-white-50 mb-0">requests from the client</p>
+        <br>
+      </div>
     </div>
   </header>
-
-<div class="container mt-2 py-5 px-5">
+  <div class="container mt-2 py-5 px-5">
     <div class="d-flex justify-content-between align-items-center">
-        <h3 id="filter-title">Details</h3>
-        <div class="btn-container">
-          <div class="notification-icon">
-            <a type="button" class="btn btn-primary mt-3 align-items-center" href="{{ url_for('remove_single_req', id=req.id) }}">Remove the request</a>
-        </div>
+      <h3 id="filter-title">Details</h3>
+      <div class="btn-container">
+        <div class="notification-icon">
+          <a type="button" class="btn btn-primary mt-3 align-items-center" href="{{ url_for('remove_single_req', id=req.id) }}">Remove the request</a>
         </div>
       </div>
+    </div>
     <form action="{{ url_for('review_request', id=req.id) }}" method="POST">
-        <!-- Car Selection -->
-         <div class="row mb-3">
-            <div class="col">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Your Name" value="{{ req.name }}" readonly>
-            </div>
-            <div class="col">
-                <label for="car-type">Car Type</label>
-                <input type="text" class="form-control" id="car-type" placeholder="" value="{{ req.car_type }}" readonly>
-            </div>
-         </div>
-        <div class="row mb-3">
-            <div class="col">
-                <label for="carSelect" class="form-label">Select Car</label>
-                <select class="form-select" id="carSelect" name="car_id" required>
-                    <option value="" selected disabled>Select a car</option>
-                    {% for car in cars %}
-                     <option value="{{ car.id }}">{{ car.car_name }}</option>
-                    {% endfor %}
-                    <!-- Add more options based on your car inventory -->
-                </select>
-            </div>
-            <div class="col">
-                <label for="carStatus" class="form-label">Car Status</label>
-                <input type="text" class="form-control" id="carStatus" name="status" value="in-use" readonly>
-            </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Your Name" value="{{ req.name }}" readonly>
         </div>
-
-        <!-- Pickup Date & Time -->
-        <div class="row mb-3">
-            <div class="col">
-                <label for="pickupDate" class="form-label">Pickup Date</label>
-                <input type="date" class="form-control" id="pickupDate" name="pickup_date" value="{{ req.pickup_date }}" required>
-            </div>
-            <div class="col">
-                <label for="pickupTime" class="form-label">Pickup Time</label>
-                <input type="time" class="form-control" id="pickupTime" name="pickup_time" value="{{ req.pickup_time }}" required>
-            </div>
+        <div class="col">
+          <label for="car-type">Car Type</label>
+          <input type="text" class="form-control" id="car-type" placeholder="" value="{{ req.car_type }}" readonly>
         </div>
-
-        <!-- Return Date & Time -->
-        <div class="row mb-3">
-            <div class="col">
-                <label for="returnDate" class="form-label">Return Date</label>
-                <input type="date" class="form-control" id="returnDate" name="return_date" value="{{ req.return_date }}" required>
-            </div>
-            <div class="col">
-                <label for="returnTime" class="form-label">Return Time</label>
-                <input type="time" class="form-control" id="returnTime" name="return_time" value="{{ req.return_time }}" required>
-            </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="carSelect" class="form-label">Select Car</label>
+          <select class="form-select" id="carSelect" name="car_id" required>
+            <option value="" selected disabled>Select a car</option>
+            {% for car in cars %}
+            <option value="{{ car.id }}">{{ car.car_name }}</option>
+            {% endfor %}
+          </select>
         </div>
-
-        <!-- Submit Button -->
-        <div class="btn-container">
-            <a type="button" class="btn btn-primary mt-3 align-items-center" href="{{ url_for('car_requests') }}">Back</a>
-            <button type="submit" class="btn btn-primary mt-3">Confirm Request</button>
+        <div class="col">
+          <label for="carStatus" class="form-label">Car Status</label>
+          <input type="text" class="form-control" id="carStatus" name="status" value="in-use" readonly>
         </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="pickupDate" class="form-label">Pickup Date</label>
+          <input type="date" class="form-control" id="pickupDate" name="pickup_date" value="{{ req.pickup_date }}" required>
+        </div>
+        <div class="col">
+          <label for="pickupTime" class="form-label">Pickup Time</label>
+          <input type="time" class="form-control" id="pickupTime" name="pickup_time" value="{{ req.pickup_time }}" required>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="returnDate" class="form-label">Return Date</label>
+          <input type="date" class="form-control" id="returnDate" name="return_date" value="{{ req.return_date }}" required>
+        </div>
+        <div class="col">
+          <label for="returnTime" class="form-label">Return Time</label>
+          <input type="time" class="form-control" id="returnTime" name="return_time" value="{{ req.return_time }}" required>
+        </div>
+      </div>
+      <div class="btn-container">
+        <a type="button" class="btn btn-primary mt-3 align-items-center" href="{{ url_for('car_requests') }}">Back</a>
+        <button type="submit" class="btn btn-primary mt-3">Confirm Request</button>
+      </div>
     </form>
-</div>
-<hr>
-
+  </div>
+  <hr>
 {% include 'footer.html' %}

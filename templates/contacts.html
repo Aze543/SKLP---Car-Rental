@@ -1,39 +1,37 @@
 {% include 'header.html' %}
-
 <header class="py-5" style="background-color: #800e13;">
     <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <br><br>
-            <h1 class="display-4 fw-bolder">Contact Us</h1>
-            <hr class="divider" />
-            <p class="lead fw-normal text-white-50 mb-0">Feel free to reach out with your concerns</p>
-            <br>
-        </div>
+      <div class="text-center text-white">
+        <br><br>
+        <h1 class="display-4 fw-bolder">Contact Us</h1>
+        <hr class="divider" />
+        <p class="lead fw-normal text-white-50 mb-0">Feel free to reach out with your concerns</p>
+        <br>
+      </div>
     </div>
-</header>
-    <div class="container mt-2 py-5">
-        <form method="POST" action="{{ url_for('contact_form') }}" class="row g-3">
-            <div class="col-md-4">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-            <div class="col-md-4">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Ex: erd@gmail.com" required>
-            </div>
-            <div class="col-md-4">
-                <label for="phone" class="form-label">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" name="phone" pattern="^(09\d{9}|(\+639)\d{9})$" placeholder="Ex: 09433227663">
-            </div>
-            <div class="col-md-12">
-                <label for="concern" class="form-label">Concern</label>
-                <textarea class="form-control" id="concern" name="concern" rows="5" placeholder="Describe your concern" required></textarea>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-    </div>
-    <hr>
-
+  </header>
+  <div class="container mt-2 py-5">
+    <form method="POST" action="{{ url_for('contact_form') }}" class="row g-3">
+      <div class="col-md-4">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="col-md-4">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Ex: erd@gmail.com" required>
+      </div>
+      <div class="col-md-4">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" name="phone" pattern="^(09\d{9}|(\+639)\d{9})$" placeholder="Ex: 09433227663">
+      </div>
+      <div class="col-md-12">
+        <label for="concern" class="form-label">Concern</label>
+        <textarea class="form-control" id="concern" name="concern" rows="5" placeholder="Describe your concern" required></textarea>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+  <hr>
 {% include 'footer.html' %}

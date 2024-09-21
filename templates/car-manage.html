@@ -1,43 +1,38 @@
 {% include 'header.html' %}
-
-  <header class="py-5" style="background-color: #800e13;">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <br><br>
-            <h1 class="display-4 fw-bolder">Car Database</h1>
-            <hr class="divider" />
-            <p class="lead fw-normal text-white-50 mb-0">Cars of the Company</p>
-            <br>
-        </div>
+<header class="py-5" style="background-color: #800e13;">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <br><br>
+      <h1 class="display-4 fw-bolder">Car Database</h1>
+      <hr class="divider" />
+      <p class="lead fw-normal text-white-50 mb-0">Cars of the Company</p>
+      <br>
     </div>
-  </header>
-
-  <div class="container mt-2 py-5 px-5">
+  </div>
+</header>
+<div class="container mt-2 py-5 px-5">
   <div class="d-flex justify-content-between align-items-center">
     <h3 id="filter-title">All Cars</h3>
     <div class="btn-container">
       <div class="notification-icon">
         <a href="{{ url_for('car_requests') }}"><i class="fas fa-bell"></i></a>
         <span class="badge text-primary">{{ req_len }}</span> <!-- Number represents how many requests you have -->
-    </div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
         Filter Cars
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="filterDropdown">
-        <li><a class="dropdown-item" href="#" onclick="filterCars('available')">Available</a></li>
-        <li><a class="dropdown-item" href="#" onclick="filterCars('in-use')">In-Use</a></li>
-        <li><a class="dropdown-item" href="#" onclick="filterCars('out-of-order')">Out of Order</a></li>
-        <li><a class="dropdown-item" href="#" onclick="filterCars('all')">Show All</a></li>
-      </ul>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+          <li><a class="dropdown-item" href="#" onclick="filterCars('available')">Available</a></li>
+          <li><a class="dropdown-item" href="#" onclick="filterCars('in-use')">In-Use</a></li>
+          <li><a class="dropdown-item" href="#" onclick="filterCars('out-of-order')">Out of Order</a></li>
+          <li><a class="dropdown-item" href="#" onclick="filterCars('all')">Show All</a></li>
+        </ul>
+      </div>
     </div>
-    </div>
-    
   </div>
-
-  <!-- Sections for Cars (Available, In-Use, etc.)-->
-   <div class="row">
-   {% for car in car_data %}
+  <div class="row">
+    {% for car in car_data %}
     <div class="col-md-4 py-2 mb-2 {{ car.car_status }}-car">
       <div class="card">
         <div class="card-body">
@@ -63,16 +58,12 @@
         </div>
       </div>
     </div>
-   {% endfor %}
+    {% endfor %}
   </div>
-
   <div class="btn-container">
     <a type="button" class="btn btn-primary mt-3 align-items-center" href="{{ url_for('logout') }}">Logout</a>
     <a type="button" class="btn btn-primary mt-3 align-items-center" href="{{ url_for('add_car') }}">Add Car</a>
   </div>
-  
 </div>
-
 <hr>
-
 {% include 'footer.html' %}

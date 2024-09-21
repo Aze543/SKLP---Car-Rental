@@ -211,22 +211,32 @@ def car_type_picker(car_type):
         return '''<option value="Sedan" selected>Sedan</option>
                   <option value="Van">Van</option>
                   <option value="AUV">AUV</option>
-                  <option value="SUV">SUV</option>'''
+                  <option value="SUV">SUV</option>
+                  <option value="Truck">Truck</option>'''
     elif car_type == 'Van':
         return '''<option value="Sedan">Sedan</option>
                   <option value="Van" selected>Van</option>
                   <option value="AUV">AUV</option>
-                  <option value="SUV">SUV</option>'''
+                  <option value="SUV">SUV</option>
+                  <option value="Truck">Truck</option>'''
     elif car_type == 'AUV':
         return '''<option value="Sedan">Sedan</option>
                   <option value="Van">Van</option>
                   <option value="AUV" selected>AUV</option>
-                  <option value="SUV">SUV</option>'''
+                  <option value="SUV">SUV</option>
+                  <option value="Truck">Truck</option>'''
     elif car_type == 'SUV':
         return '''<option value="Sedan">Sedan</option>
                   <option value="Van">Van</option>
                   <option value="AUV">AUV</option>
-                  <option value="SUV" selected>SUV</option>'''
+                  <option value="SUV" selected>SUV</option>
+                  <option value="Truck">Truck</option>'''
+    elif car_type == 'Truck':
+        return '''<option value="Sedan">Sedan</option>
+            <option value="Van">Van</option>
+            <option value="AUV">AUV</option>
+            <option value="SUV">SUV</option>
+            <option value="Truck" selected>Truck</option>'''
                   
 def car_transmission_picker(car_transmission):
     if car_transmission == 'Automatic':

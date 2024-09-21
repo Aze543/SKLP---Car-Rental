@@ -1,101 +1,108 @@
 {% include "header.html" %}
-        <!-- Header-->
-        <header class="py-5" style="background-color: #800e13;">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <br><br>
-                    <h1 class="display-4 fw-bolder">Car List</h1>
-                    <hr class="divider" />
-                    <p class="lead fw-normal text-white-50 mb-0"> Rent a Car at a Reasonable Price!</p>
-                    <br>
-                </div>
-            </div>
-        </header>
-        <!-- contents -->
-        <section class="py-5">
-            <div class=" mx-auto justify-content-center">
-              <div class="container mt-5">
-                  <div class="row">
-                      <!-- Vehicle Image -->
-                      <div class="col-md-7">
-                          <img src="{{ url_for('static', filename='img/sedan.png') }}" alt="Vehicle Image" class="img-fluid rounded">
-                      </div>
-                      <!-- Vehicle Details -->
-                      <div class="col-md-5 mt-4 v-det">
-                          <h2>Sedan</h2>
-                          <ul class="list-unstyled">
-                              <li><strong>Capacity:</strong> 5</li>
-                              <li><strong>Fuel Type:</strong> Gasoline</li>
-                              <li><strong>Transmission:</strong> Automatic</li>
-                              <li><strong>Price per Day:</strong> ₱1,800.00</li>
-                          </ul>
-                          <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_form', car='Sedan') }}">Rent Now</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="container mt-5">
-                <div class="row">
-                    <!-- Vehicle Image -->
-                    <div class="col-md-7">
-                        <img src="{{ url_for('static', filename='img/van.png') }}" alt="Vehicle Image" class="img-fluid rounded">
-                    </div>
-                    <!-- Vehicle Details -->
-                    <div class="col-md-5 mt-4 v-det">
-                        <h2>Van</h2>
-                        <ul class="list-unstyled">
-                            <li><strong>Capacity:</strong> 16</li>
-                            <li><strong>Fuel Type:</strong> Gasoline</li>
-                            <li><strong>Transmission:</strong> Manual</li>
-                            <li><strong>Price per Day:</strong> ₱2,500.00</li>
-                        </ul>
-                        <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_form', car='Van') }}">Rent Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="container mt-5">
-                <div class="row">
-                    <!-- Vehicle Image -->
-                    <div class="col-md-7">
-                        <img src="{{ url_for('static', filename='img/AUV.png') }}" alt="Vehicle Image" class="img-fluid rounded">
-                    </div>
-                    <!-- Vehicle Details -->
-                    <div class="col-md-5 mt-4 v-det">
-                        <h2>AUV</h2>
-                        <ul class="list-unstyled">
-                            <li><strong>Capacity:</strong> 10</li>
-                            <li><strong>Fuel Type:</strong> Gasoline</li>
-                            <li><strong>Transmission:</strong> Manual</li>
-                            <li><strong>Price per Day:</strong> ₱2,200.00</li>
-                        </ul>
-                        <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_form', car='AUV') }}">Rent Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="container mt-5">
-                <div class="row">
-                    <!-- Vehicle Image -->
-                    <div class="col-md-7">
-                        <img src="{{ url_for('static', filename='img/SUV.png') }}" alt="Vehicle Image" class="img-fluid rounded">
-                    </div>
-                    <!-- Vehicle Details -->
-                    <div class="col-md-5 mt-4 v-det">
-                        <h2>SUV</h2>
-                        <ul class="list-unstyled">
-                            <li><strong>Capacity:</strong> 7</li>
-                            <li><strong>Fuel Type:</strong> Gasoline</li>
-                            <li><strong>Transmission:</strong> Manual</li>
-                            <li><strong>Price per Day:</strong> ₱2,300.00</li>
-                        </ul>
-                        <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_form', car='SUV') }}">Rent Now</a>
-                    </div>
-                </div>
-            </div>
-            </div>
-      </section>
-      {% if request.args.get('success') %}
-      <script>
-        alert("You have successfully created a request, please wait for the reply!");
-      </script>
-      {% endif %}
-      <hr>
+<header class="py-5" style="background-color: #800e13;">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+        <br><br>
+        <h1 class="display-4 fw-bolder">Car List</h1>
+        <hr class="divider" />
+        <p class="lead fw-normal text-white-50 mb-0"> Rent a Car at a Reasonable Price!</p>
+        <br>
+      </div>
+    </div>
+  </header>
+  <section class="py-5">
+    <div class=" mx-auto justify-content-center">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-7">
+            <img src="{{ url_for('static', filename='img/sedan.png') }}" alt="Vehicle Image" class="img-fluid rounded">
+          </div>
+          <div class="col-md-5 mt-4 v-det">
+            <h2>Sedan</h2>
+            <ul class="list-unstyled">
+              <li><strong>Capacity:</strong> 5</li>
+              <li><strong>Fuel Type:</strong> Gasoline</li>
+              <li><strong>Transmission:</strong> Automatic</li>
+              <li><strong>Price per Day:</strong> ₱1,800.00</li>
+            </ul>
+            <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_form', car='Sedan') }}">Rent Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-7">
+            <img src="{{ url_for('static', filename='img/van.png') }}" alt="Vehicle Image" class="img-fluid rounded">
+          </div>
+          <div class="col-md-5 mt-4 v-det">
+            <h2>Van</h2>
+            <ul class="list-unstyled">
+              <li><strong>Capacity:</strong> 16</li>
+              <li><strong>Fuel Type:</strong> Gasoline</li>
+              <li><strong>Transmission:</strong> Manual</li>
+              <li><strong>Price per Day:</strong> ₱2,500.00</li>
+            </ul>
+            <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_form', car='Van') }}">Rent Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-7">
+            <img src="{{ url_for('static', filename='img/AUV.png') }}" alt="Vehicle Image" class="img-fluid rounded">
+          </div>
+          <div class="col-md-5 mt-4 v-det">
+            <h2>AUV</h2>
+            <ul class="list-unstyled">
+              <li><strong>Capacity:</strong> 10</li>
+              <li><strong>Fuel Type:</strong> Gasoline</li>
+              <li><strong>Transmission:</strong> Manual</li>
+              <li><strong>Price per Day:</strong> ₱2,200.00</li>
+            </ul>
+            <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_form', car='AUV') }}">Rent Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-7">
+            <img src="{{ url_for('static', filename='img/SUV.png') }}" alt="Vehicle Image" class="img-fluid rounded">
+          </div>
+          <div class="col-md-5 mt-4 v-det">
+            <h2>SUV</h2>
+            <ul class="list-unstyled">
+              <li><strong>Capacity:</strong> 7</li>
+              <li><strong>Fuel Type:</strong> Gasoline</li>
+              <li><strong>Transmission:</strong> Manual</li>
+              <li><strong>Price per Day:</strong> ₱2,300.00</li>
+            </ul>
+            <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_form', car='SUV') }}">Rent Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5"></div>
+      <div class="row">
+        <div class="col-md-7">
+          <img src="{{ url_for('static', filename='img/truck.webp') }}" alt="Vehicle Image" class="img-fluid rounded">
+        </div>
+        <div class="col-md-5 mt-4 v-det">
+          <h2>Truck</h2>
+          <ul class="list-unstyled">
+            <li><strong>Capacity:</strong> 5</li>
+            <li><strong>Fuel Type:</strong> Diesel</li>
+            <li><strong>Transmission:</strong> Manual/Automatic</li>
+            <li><strong>Price per Day:</strong> ₱2,500.00</li>
+          </ul>
+          <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_form', car='Truck') }}">Rent Now</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  {% if request.args.get('success') %}
+  <script>
+    alert("You have successfully created a request, please wait for the reply!");
+  </script>
+  {% endif %}
+  <hr>
 {% include "footer.html" %}

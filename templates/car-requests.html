@@ -1,58 +1,48 @@
 {% include 'header.html' %}
-
-  <header class="py-5" style="background-color: #800e13;">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <br><br>
-            <h1 class="display-4 fw-bolder">Client Requests</h1>
-            <hr class="divider" />
-            <p class="lead fw-normal text-white-50 mb-0">requests from the client</p>
-            <br>
-        </div>
+<header class="py-5" style="background-color: #800e13;">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <br><br>
+      <h1 class="display-4 fw-bolder">Client Requests</h1>
+      <hr class="divider" />
+      <p class="lead fw-normal text-white-50 mb-0">requests from the client</p>
+      <br>
     </div>
-  </header>
-
-  <div class="container mt-2 py-5 px-5">
-      
+  </div>
+</header>
+<div class="container mt-2 py-5 px-5">
   <div class="d-flex justify-content-between align-items-center">
     <h3 id="filter-title">All Requests</h3>
     <div class="btn-container">
       <div class="notification-icon">
         <a type="button" class="btn btn-primary mt-3 align-items-center" href="{{ url_for('remove_requests') }}">Remove all requests</a>
-    </div>
+      </div>
     </div>
   </div>
-
-  <!-- Sections for Cars (Available, In-Use, etc.)-->
   <div class="row">
     {% for req in req_data %}
-     <div class="col-md-4 py-2 mb-2">
-       <div class="card">
-         <div class="card-body">
-           <h5 class="card-title">{{ req.name }}</h5>
-           <p class="card-text">Type: {{ req.car_type }}</p>
-           <p class="card-text">Pickup date:<input type="date" value="{{ req.pickup_date }}" readonly></p>
-           <p class="card-text">Pickup time:<input type="time" value="{{ req.pickup_time }}" readonly></p>
-           <a class="btn btn-primary expand-btn" href="{{ url_for('review_request', id=req.id) }}">Review</a>
-         </div>
-       </div>
-     </div>
+    <div class="col-md-4 py-2 mb-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ req.name }}</h5>
+          <p class="card-text">Type: {{ req.car_type }}</p>
+          <p class="card-text">Pickup date:<input type="date" value="{{ req.pickup_date }}" readonly></p>
+          <p class="card-text">Pickup time:<input type="time" value="{{ req.pickup_time }}" readonly></p>
+          <a class="btn btn-primary expand-btn" href="{{ url_for('review_request', id=req.id) }}">Review</a>
+        </div>
+      </div>
+    </div>
     {% endfor %}
-   </div>
-    
-
+  </div>
   <div class="btn-container">
     <a type="button" class="btn btn-primary mt-3 align-items-center" href="{{ url_for('logout') }}">Logout</a>
     <a type="button" class="btn btn-primary mt-3 align-items-center" href="{{ url_for('car_manage') }}">Car Database</a>
   </div>
-  
 </div>
-
 <hr>
 {% if request.args.get('success') %}
 <script>
   alert("Request confirmed!, an email was sent to the client about the car!");
 </script>
 {% endif %}
-
 {% include 'footer.html' %}

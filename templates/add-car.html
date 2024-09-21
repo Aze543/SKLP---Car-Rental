@@ -1,125 +1,112 @@
 {% include 'header.html' %}
 <header class="py-5" style="background-color: #800e13;">
     <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <br><br>
-            <h1 class="display-4 fw-bolder">Car Database</h1>
-            <hr class="divider" />
-            <p class="lead fw-normal text-white-50 mb-0">Add a car to the database</p>
-            <br>
-        </div>
+      <div class="text-center text-white">
+        <br><br>
+        <h1 class="display-4 fw-bolder">Car Database</h1>
+        <hr class="divider" />
+        <p class="lead fw-normal text-white-50 mb-0">Add a car to the database</p>
+        <br>
+      </div>
     </div>
   </header>
-<div class="container mt-2 py-5 px-5">
+  <div class="container mt-2 py-5 px-5">
     <h3>Car Details</h3>
-  
-    <!-- Car Edit Form -->
     <form action="{{ url_for('add_car') }}" method="POST">
-      
-      <!-- Car Name -->
-       <div class="row mb-2">
-            <div class="col-md-6">
-                <label for="carName" class="form-label">Car Name</label>
-                <input type="text" class="form-control" id="carName" name="car-name" placeholder="Ex: Nissan GT-R R34" required>
-            </div>
-            <div class="col-md-6">
-                <label for="car-type" class="form-label">Car Type</label>
-                <select class="form-select" id="car-type" name="car-type">
-                    <option value="Sedan" selected>Sedan</option>
-                    <option value="Van">Van</option>
-                    <option value="AUV">AUV</option>
-                    <option value="SUV">SUV</option>
-                </select> 
-            </div>
-       </div>
-
-       <div class="row mb-2">
-            <div class="col-md-6">
-                <label for="capacity" class="form-label">Capacity</label>
-                <input type="number" class="form-control" id="capacity" name="capacity" placeholder="Ex: 7" required>
-            </div>
-            <div class="col-md-6">
-                <label for="transmission" class="form-label">Transmission</label>
-                <select class="form-select" id="transmission" name="transmission" onchange="">
-                    <option value="Automatic" selected>Automatic</option>
-                    <option value="Manual">Manual</option>
-                </select>
-            </div>
-       </div>
-
-       <div class="row">
-            <div class="col-md-6">
-                <label for="gasoline" class="form-label">Gasoline Type</label>
-                <input type="text" class="form-control" id="gasoline" name="gasoline" placeholder="Ex: Petrol" required>
-            </div>
-            <div class="col-md-6">
-                <label for="status" class="form-label">Car Status</label>
-                <select class="form-select" id="status" name="status" onchange="editCar()">
-                    <option value="available" selected>Available</option>
-                    <option value="in-use">In-Use</option>
-                    <option value="out-of-order">Out of Order</option>
-                </select> 
-            </div>
-        </div>
-
-
-       <div class="row" id="edit-in-use2">
+      <div class="row mb-2">
         <div class="col-md-6">
-            <label for="pickup-date">Pickup Date</label>
-            <input type="date" class="form-control" id="pickup-date" name="pickup_date" required>
+          <label for="carName" class="form-label">Car Name</label>
+          <input type="text" class="form-control" id="carName" name="car-name" placeholder="Ex: Nissan GT-R R34" required>
         </div>
         <div class="col-md-6">
-            <label for="pickup-time">Pickup Time</label>
-            <input type="time" class="form-control" id="pickup-time" name="pickup_time" required>
+          <label for="car-type" class="form-label">Car Type</label>
+          <select class="form-select" id="car-type" name="car-type">
+            <option value="Sedan" selected>Sedan</option>
+            <option value="Van">Van</option>
+            <option value="AUV">AUV</option>
+            <option value="SUV">SUV</option>
+            <option value="Truck">Truck</option>
+          </select>
         </div>
-       </div>
-
-       <div class="row" id="edit-in-use">
-            <div class="col-md-6">
-                <label for="return-date">Return Date</label>
-                <input type="date" class="form-control" id="return-date" name="return_date" required>
-            </div>
-            <div class="col-md-6">
-                <label for="return-time">Return Time</label>
-                <input type="time" class="form-control" id="return-time" name="return_time" required>
-            </div>
-       </div>
-  
-  
-      <!-- Submit Button -->
-       <div class="btn-container">
-            <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_manage') }}">Back</a>
-            <button type="submit" class="btn btn-primary mt-3">Add car</button>
-       </div>
-
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <label for="capacity" class="form-label">Capacity</label>
+          <input type="number" class="form-control" id="capacity" name="capacity" placeholder="Ex: 7" required>
+        </div>
+        <div class="col-md-6">
+          <label for="transmission" class="form-label">Transmission</label>
+          <select class="form-select" id="transmission" name="transmission" onchange="">
+            <option value="Automatic" selected>Automatic</option>
+            <option value="Manual">Manual</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="gasoline" class="form-label">Gasoline Type</label>
+          <input type="text" class="form-control" id="gasoline" name="gasoline" placeholder="Ex: Petrol" required>
+        </div>
+        <div class="col-md-6">
+          <label for="status" class="form-label">Car Status</label>
+          <select class="form-select" id="status" name="status" onchange="editCar()">
+            <option value="available" selected>Available</option>
+            <option value="in-use">In-Use</option>
+            <option value="out-of-order">Out of Order</option>
+          </select>
+        </div>
+      </div>
+      <div class="row" id="edit-in-use2">
+        <div class="col-md-6">
+          <label for="pickup-date">Pickup Date</label>
+          <input type="date" class="form-control" id="pickup-date" name="pickup_date" required>
+        </div>
+        <div class="col-md-6">
+          <label for="pickup-time">Pickup Time</label>
+          <input type="time" class="form-control" id="pickup-time" name="pickup_time" required>
+        </div>
+      </div>
+      <div class="row" id="edit-in-use">
+        <div class="col-md-6">
+          <label for="return-date">Return Date</label>
+          <input type="date" class="form-control" id="return-date" name="return_date" required>
+        </div>
+        <div class="col-md-6">
+          <label for="return-time">Return Time</label>
+          <input type="time" class="form-control" id="return-time" name="return_time" required>
+        </div>
+      </div>
+      <div class="btn-container">
+        <a type="button" class="btn btn-primary mt-3" href="{{ url_for('car_manage') }}">Back</a>
+        <button type="submit" class="btn btn-primary mt-3">Add car</button>
+      </div>
     </form>
   </div>
-</div>
-<hr>
-<script>
+  </div>
+  <hr>
+  <script>
     document.getElementById('edit-in-use').style.display = 'none';
     document.getElementById('edit-in-use2').style.display = 'none';
-
+    
     document.getElementById('return-date').required = false;
     const rd_element = document.getElementById("return-date");
     const rd_attr = rd_element.getAttributeNode("name");
     rd_element.removeAttributeNode(rd_attr);
-
+    
     document.getElementById('return-time').required = false;
     const rt_element = document.getElementById("return-time");
     const rt_attr = rt_element.getAttributeNode("name");
     rt_element.removeAttributeNode(rt_attr);
-
+    
     document.getElementById('pickup-date').required = false;
     const pd_element = document.getElementById("pickup-date");
     const pd_attr = pd_element.getAttributeNode("name");
     pd_element.removeAttributeNode(pd_attr);
-
+    
     document.getElementById('pickup-time').required = false;
     const pt_element = document.getElementById("pickup-time");
     const pt_attr = pt_element.getAttributeNode("name");
     pt_element.removeAttributeNode(pt_attr);
     
-</script>
-  
+  </script>
 {% include 'footer.html' %}
