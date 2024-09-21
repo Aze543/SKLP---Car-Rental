@@ -1,0 +1,73 @@
+{% include 'header.html' %}
+<header class="py-5" style="background-color: #800e13;">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <br><br>
+            <h1 class="display-4 fw-bolder">Car Rental Form</h1>
+            <hr class="divider" />
+            <p class="lead fw-normal text-white-50 mb-0">Please fill the details below</p>
+            <br>
+        </div>
+    </div>
+</header>
+
+    <div class="container mt-2 py-5">
+        <div class="alert alert-info" role="alert">
+            You are currently renting: <strong>{{ car }}</strong>
+          </div>
+        <form method="POST" action="{{ url_for('car_form', car=car) }}">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="pickupDate">Pickup Date</label>
+                    <input type="date" class="form-control" id="pickupDate" name="pickup-date" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="pickupTime">Pickup Time</label>
+                    <input type="time" class="form-control" id="pickupTime" name="pickup-time" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label for="returnDate">Return Date</label>
+                    <input type="date" class="form-control" id="returnDate" name="return-date" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="returnTime">Return Time</label>
+                    <input type="time" class="form-control" id="returnTime" name="return-time" required>
+                </div>
+            </div>
+
+            <!-- Pickup and Return Location (defaulted to company's location) -->
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <label for="pickupLocation">Pickup Location</label>
+                    <input type="text" class="form-control" id="pickupLocation" value="Company Location" readonly>
+                </div>
+                <div class="col-md-6">
+                    <label for="returnLocation">Return Location</label>
+                    <input type="text" class="form-control" id="returnLocation" value="Company Location" readonly>
+                </div>
+            </div>
+
+            <!-- User Information: Name, Email, Phone Number -->
+            <div class="row mt-2">
+                <div class="col-md-4">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your Email" name="email" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number" name="phone" pattern="^(09\d{9}|(\+639)\d{9})$" required>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+    <hr>
+{% include 'footer.html' %}

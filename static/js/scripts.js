@@ -52,8 +52,86 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     // Activate SimpleLightbox plugin for portfolio items
-    new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
-    });
-
 });
+function filterCars(status) {
+    if (status === 'available') {
+      document.getElementById('filter-title').innerText = 'Available Cars';
+      $(".available-car").show();
+      $(".in-use-car").hide();
+      $(".out-of-order-car").hide();
+      $(".show-status").hide();
+    } else if (status === 'in-use') {
+      document.getElementById('filter-title').innerText = 'In-Use Cars';
+      $(".available-car").hide();
+      $(".in-use-car").show();
+      $(".out-of-order-car").hide();
+      $(".show-status").hide();
+    } else if (status === 'out-of-order') {
+      document.getElementById('filter-title').innerText = 'Out of Order Cars';
+      $(".available-car").hide();
+      $(".in-use-car").hide();
+      $(".out-of-order-car").show();
+      $(".show-status").hide();
+    } else {
+      document.getElementById('filter-title').innerText = 'All Cars';
+      $(".available-car").show();
+      $(".in-use-car").show();
+      $(".out-of-order-car").show();
+      $(".show-status").show();
+    }
+  };
+function editCar() {
+    var inUseNow = document.getElementById('status').value;
+    console.log(inUseNow);
+    if ( inUseNow === 'in-use') {
+        $('#edit-in-use').show();
+        $('#edit-in-use2').show();
+        document.getElementById('return-date').required = true;
+        document.getElementById('return-time').required = true;
+        document.getElementById('pickup-date').required = true;
+        document.getElementById('pickup-time').required = true;
+
+        const rd_attr = document.createAttribute("name");
+        rd_attr.value = "return_date";
+        const rd_element = document.getElementById("return-date");
+        rd_element.setAttributeNode(rd_attr);
+
+        const rt_attr = document.createAttribute("name");
+        rt_attr.value = "return_time";
+        const rt_element = document.getElementById("return-time");
+        rt_element.setAttributeNode(rt_attr);
+
+        const pd_attr = document.createAttribute("name");
+        pd_attr.value = "pickup_date";
+        const pd_element = document.getElementById("pickup-date");
+        pd_element.setAttributeNode(pd_attr);
+
+        const pt_attr = document.createAttribute("name");
+        pt_attr.value = "pickup_time";
+        const pt_element = document.getElementById("pickup-time");
+        pt_element.setAttributeNode(pt_attr);
+    } else {
+        $('#edit-in-use').hide();
+        $('#edit-in-use2').hide();
+        document.getElementById('return-date').required = false;
+        document.getElementById('return-time').required = false;
+        document.getElementById('pickup-date').required = false;
+        document.getElementById('pickup-time').required = false;
+
+        const rd_element = document.getElementById("return-date");
+        const rd_attr = rd_element.getAttributeNode("name");
+        rd_element.removeAttributeNode(rd_attr);
+
+        const rt_element = document.getElementById("return-time");
+        const rt_attr = rt_element.getAttributeNode("name");
+        rt_element.removeAttributeNode(rt_attr);
+
+        const pd_element = document.getElementById("pickup-date");
+        const pd_attr = pd_element.getAttributeNode("name");
+        pd_element.removeAttributeNode(pd_attr);
+
+        const pt_element = document.getElementById("pickup-time");
+        const pt_attr = pt_element.getAttributeNode("name");
+        pt_element.removeAttributeNode(pt_attr);
+    }
+};

@@ -9,7 +9,6 @@
           </div>
           <div class="col-lg-8 align-self-baseline">
              <p class="text-white-75 mb-5">Experience the highest quality and comfort with our top-tier rental cars, ensuring you drive the best and leave the rest behind.</p>
-             <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
           </div>
        </div>
     </div>
@@ -22,42 +21,42 @@
              <h2 class="text-white mt-0">We've got what you need!</h2>
              <hr class="divider divider-light" />
              <p class="text-white-75 mb-4">Whether you need a van, sedan, AUV, SUV, or truck, our company provides a wide range of high-quality rental vehicles at reasonable prices to meet all your transportation needs.</p>
-             <a class="btn btn-light btn-xl" href="{{ url_for('car_list') }}">Book Now!</a>
+             <a class="btn btn-light btn-xl" href="{{ url_for('car_list') }}">Rent Now!</a>
           </div>
     </div>
  </section>
  <!-- Services-->
  <section class="page-section" id="services">
-    <div class="container px-4 px-lg-5">
+    <div class="container px-3 px-lg-5">
        <h2 class="text-center mt-0">At Your Service</h2>
        <hr class="divider" />
        <div class="row gx-4 gx-lg-5">
           <div class="col-lg-3 col-md-6 text-center">
              <div class="mt-5">
-                <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
-                <h3 class="h4 mb-2">Sturdy Themes</h3>
-                <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                <div class="mb-2"><i class="fa-car fa-solid fs-1 text-primary"></i></div>
+                <h3 class="h4 mb-2">Variety of Vehicles</h3>
+                <p class="text-muted mb-0">Rent vans, sedans, AUVs, SUVs, and trucks for any occasion.</p>
              </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
              <div class="mt-5">
-                <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
-                <h3 class="h4 mb-2">Up to Date</h3>
-                <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+                <div class="mb-2"><i class="fa-percent fa-solid fs-1 text-primary"></i></div>
+                <h3 class="h4 mb-2">Affordable Rates</h3>
+                <p class="text-muted mb-0">Quality vehicles at competitive prices.</p>
              </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
              <div class="mt-5">
-                <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                <h3 class="h4 mb-2">Ready to Publish</h3>
-                <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+                <div class="mb-2"><i class="fa-solid fa-paperclip fs-1 text-primary"></i></div>
+                <h3 class="h4 mb-2">Flexible Plans</h3>
+                <p class="text-muted mb-0">Rent by the day, week, or longer—whatever you need.</p>
              </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
              <div class="mt-5">
-                <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                <h3 class="h4 mb-2">Made with Love</h3>
-                <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+                <div class="mb-2"><i class="fa-solid fa-user fs-1 text-primary"></i></div>
+                <h3 class="h4 mb-2">Reliable Assistance</h3>
+                <p class="text-muted mb-0">Get help from our support team during business hours.</p>
              </div>
           </div>
        </div>
@@ -124,17 +123,10 @@
        </div>
     </div>
  </div>
- <!-- Contact-->
- <!-- <section class="page-section" id="contact">
-    <div class="container px-4 px-lg-5">
-       <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-lg-8 col-xl-6 text-center">
-             <h2 class="mt-0">Let's Get In Touch!</h2>
-             <hr class="divider" />
-             <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
-          </div>
-       </div>
-     </div>
- </section> -->
+ {% if request.args.get('success') %}
+    <script>
+        alert("You have successfully sent your concern, please wait for the reply!");
+    </script>
+ {% endif %}
  {% include 'footer.html' %}
 

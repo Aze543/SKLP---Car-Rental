@@ -1,0 +1,32 @@
+{% include 'header.html' %}
+<header class="py-5" style="background-image: url('static/img/admin/adminlogin.jpg');">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <br><br>
+            <h1 class="display-4 fw-bolder">Admin</h1>
+            <hr class="divider" />
+            <p class="lead fw-normal text-white-75 mb-0">Please fill the detail below</p>
+            <br>
+        </div>
+    </div>
+</header>
+        <div class="container mt-2 py-5">
+            <div class="row">
+                <div class="col-md-6">
+                        <div class="col-md-8">
+                            <form method="POST" action="{{ url_for('admin') }}">
+
+                                <label for="" class="text-uppercase text-sm">Password</label>
+                                <input type="password" placeholder="Enter the password" name="password" class="form-control mt-2" required>
+                                {% if request.args.get('failed') %}
+                                <p class="mb-0 text-danger">Invalid credentials. Please try again.</p>
+                                {% endif %}
+                                <button class="btn btn-primary btn-block mt-3" name="login" type="submit">LOGIN</button>
+
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+<hr>
+{% include 'footer.html' %}
