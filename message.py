@@ -3,18 +3,13 @@ def remove_braces(input_str):
     return result.strip("''")
 
 def format_time(pt, rt):
-    print(rt, pt)
     times = [str(rt), str(pt)]
     f_t = []
-    print(times)
+    f_time = []
     for time in times:
         result = remove_braces(time)
         f_t.append(result)
-    print(f_t)
     f_t = [item.split(":") for item in f_t]
-    print(f_t)
-
-    f_time = []
     for rt in f_t:
         if int(rt[0]) > 12:
             f_time.append(f"{int(rt[0])-12}:{rt[1]} PM")
